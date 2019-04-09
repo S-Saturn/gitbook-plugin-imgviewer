@@ -2,10 +2,10 @@ module.exports = {
   book: {
     assets: './assets',
     js: [
-      'index.js',
       'jquery.min.js',
+      'viewer.min.js',
       'jquery-viewer.min.js',
-      'viewer.min.js'
+      'index.js'
     ],
     css: [
       'viewer.min.css'
