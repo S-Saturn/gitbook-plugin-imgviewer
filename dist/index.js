@@ -19,17 +19,17 @@ module.exports = {
   hooks: {
     page: function(page) {
       let $ = cheerio.load(page.content);
-      const $image = $('img');
-
-      $image.viewer({
-        navbar: false,
-        toolbar: false,
-        fullscreen: false,
-        loop: false,
-        rotatable: false,
+      $('img').each(function(index, img) {
+        img.viewer({
+          navbar: false,
+          toolbar: false,
+          fullscreen: false,
+          loop: false,
+          rotatable: false,
+        });
+        img.data('viewer');
       });
 
-      $image.data('viewer');
       page.content = $.html();
       return page;
     },
