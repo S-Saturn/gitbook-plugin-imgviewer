@@ -1,6 +1,6 @@
-let cheerio = require('cheerio');
+var cheerio = require('cheerio');
 
-const getAssets = function() {
+var getAssets = function() {
   return {
     assets: './dist/assets',
     js: [
@@ -17,8 +17,8 @@ const getAssets = function() {
 module.exports = {
   book: getAssets(),
   hooks: {
-    page: function(page) {
-      let $ = cheerio.load(page.content);
+    page: function(_page) {
+      let $ = cheerio.load(_page.content);
       $('img').each(function(index, img) {
         let currentImg = $(img);
         currentImg.viewer({
@@ -28,11 +28,10 @@ module.exports = {
           loop: false,
           rotatable: false,
         });
-        currentImg.data('viewer');
       });
 
-      page.content = $.html();
-      return page;
+      _page.content = $.html();
+      return _page;
     },
   },
 };
