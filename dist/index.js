@@ -20,14 +20,15 @@ module.exports = {
     page: function(page) {
       let $ = cheerio.load(page.content);
       $('img').each(function(index, img) {
-        img.viewer({
+        let currentImg = $(img);
+        currentImg.viewer({
           navbar: false,
           toolbar: false,
           fullscreen: false,
           loop: false,
           rotatable: false,
         });
-        img.data('viewer');
+        currentImg.data('viewer');
       });
 
       page.content = $.html();
