@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-imgviewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "jquery": "^3.3.1",
