@@ -9,7 +9,6 @@ require(['gitbook'], function(gitbook) {
         loop: false,
         rotatable: false,
       });
-      currentImg.css('background-color', 'white');
     });
   });
 });
