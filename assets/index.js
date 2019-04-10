@@ -9,7 +9,7 @@ $(function() {
   //     rotatable: false,
   //   });
   // });
-  $('.book-body').change(function() {
+  $('.book-body')[0].change(function() {
     $('img').each(function(index, img) {
       let currentImg = $(img);
       currentImg.viewer({
